@@ -6,7 +6,13 @@ import MailActions from "../Redux/MailRedux";
 
 export function* load_threads(api){
   const res = yield call(api.request_threads)
+  if(!res.data) res.data=[]
   yield put(MailActions.loadThreads(res.data));
+}
+export function* load_messages(api, {thread}){
+  const res = yield call(api.request_messages, thread)
+  if(!res.data) res.data=[]
+  yield put(MailActions.loadMessages(res.data));
 }
 // export function* login(api, { email, password }) {
   

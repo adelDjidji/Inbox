@@ -39,3 +39,13 @@
 .ant-menu-dark .ant-menu-item-selected > a, .ant-menu-dark .ant-menu-item-selected > a:hover {
   color: #2196F3 !important;
 }
+li.ant-list-item{
+  padding: 7pt;
+  border-bottom: solid 1px grey!important;
+  cursor: pointer;
+}
+li.ant-list-item:hover{
+  background-color: white;
+  border-bottom: solid 1px grey;
+  cursor: pointer;
+}

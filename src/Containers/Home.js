@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Layout, Menu, Icon} from 'antd';
+import { Layout, Menu, Icon, Badge} from 'antd';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Threads from './ListThreads'
 
@@ -48,12 +48,14 @@ class Home extends Component {
                                 <Link to="/">
                                     <Icon type="video-camera" />
                                     <span>Inbox</span>
+                                    <Badge style={{ backgroundColor: '#fff', color: '#999', boxShadow: '0 0 0 1px #d9d9d9 inset', right: '-54pt' }} count={25} />
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="3">
                                 <Link to="/">
                                     <Icon type="video-camera" />
                                     <span>Inbox</span>
+                                    <Badge style={{ backgroundColor: '#fff', color: '#999', boxShadow: '0 0 0 1px #d9d9d9 inset', right: '-54pt' }} count={25} />
                                 </Link>
                             </Menu.Item>
                         </Menu>
@@ -70,7 +72,7 @@ class Home extends Component {
                         <Content
                             style={{
                                 margin: '24px 16px',
-                                padding: 24,
+                                padding: 2,
                                 background: '#fff',
                                 minHeight: 280,
                             }}
