@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+  background-color: #f0f2f5 !important;
+  color: black !important;
+}
+.ant-menu-dark .ant-menu-item-selected > a, .ant-menu-dark .ant-menu-item-selected > a:hover {
+  color: #2196F3 !important;
+}
