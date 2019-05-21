@@ -31,6 +31,7 @@ class ThreadDetail extends Component {
     componentWillReceiveProps(nextProps) {
 
         //after getting data from redux as props, we save it on current state
+        this.data=[]
         nextProps.threadOBJ.messages.map(msg => {
             var item = {}
             item.author = msg.creator.username
@@ -104,7 +105,7 @@ this.setState({value:""})
             return (
                 <Collapse defaultActiveKey={['1']} >
 
-                    <Panel header={<span>{obj.subject}<Icon onClick={this.handledelete} style={{    float: 'right',color: '#E91E63'}} type="delete" /></span>} key="1">
+                    <Panel showArrow={false} header={<span><span className="bold"><Icon type="tag" /> {obj.subject}</span><Icon onClick={this.handledelete} style={{    float: 'right',color: '#E91E63'}} type="delete" /></span>} key="1">
                         <p>{list}</p>
                         <Form.Item>
                             <TextArea rows={4} onChange={this.handleChange} value={this.state.value} />

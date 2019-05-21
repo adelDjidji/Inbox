@@ -31,17 +31,24 @@ class Threads extends Component {
         this.setState({selectedThread:val})
     }
 
+    handlehide=()=>{
+        this.setState({selectedThread:0})
+    }
     render() {
-        var da=null
+        var da=null,v=null
                     if(this.state.selectedThread==0){
                         da=  <div></div>
+                        v=<span></span>
                     }else{
-                        da=  <Sider width={600} style={{background:'transparent',     minWidth: '50%!important', width:600}}><ThreadDetails data={this.state.selectedThread} /></Sider>
+                        
+                        //v=<Icon onClick={this.handlehide} type="eye-invisible" />
+                        da=  <Sider width={600} style={{background:'transparent',     minWidth: '50%!important', width:600}}><Icon style={{marginRight: '6pt',marginTop: '9pt', zIndex:9999,    position: 'absolute',right: '28pt',top: '2pt'}} onClick={this.handlehide} type="eye-invisible" /><ThreadDetails data={this.state.selectedThread} /></Sider>
                     }
                     
         return (
             <div>
             <Layout style={{ background: '#fff' }}>
+            {v}
             <Content>
                 <List
                     itemLayout="horizontal"

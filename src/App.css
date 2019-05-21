@@ -49,3 +49,6 @@ li.ant-list-item:hover{
   border-bottom: solid 1px grey;
   cursor: pointer;
 }
+.bold{
+  font-weight: bold
+}

@@ -83,7 +83,7 @@ class Compose extends Component {
                                     message: 'Please indicate a subject',
                                 },
                             ],
-                        })(<Input />)}
+                        })(<Input prefix={<Icon type="tag" style={{ color: 'rgba(0,0,0,.25)' }} />} />)}
                     </Form.Item>
                     <Form.Item label="Recipient">
                         {getFieldDecorator('recipient', {
@@ -97,7 +97,7 @@ class Compose extends Component {
                                     message: 'Please indicate an E-mail!',
                                 },
                             ],
-                        })(<Input />)}
+                        })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} />)}
                     </Form.Item>
                     <Form.Item label="Message" hasFeedback>
                         {getFieldDecorator('password', {
