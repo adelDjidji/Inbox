@@ -1,5 +1,7 @@
 import { createReducer, createActions } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
+import { Button, notification } from 'antd';
+
 
 const { Types, Creators } = createActions({
   RequestThreads:[],
@@ -8,6 +10,8 @@ const { Types, Creators } = createActions({
   loadThread: ["thread"],
   sendThread:["thread"],
   sendThreadSuccess:[],
+  sendMessage:["thread_id", "data"],
+  sendMessageSuccess:[]
 });
 
 export const MailTypes = Types;
@@ -112,8 +116,27 @@ export const send_thread =(state, {thread})  =>{
   return state.merge({ threadSent: false });
 }
 export const send_thread_success =(state)  =>{
-alert('send success')
+  notification['success']({
+    message: 'Success',
+    description:
+      'Thread sent with success.',
+  })
+  setInterval(function(){ document.location.href='/' }, 1000);
+  
   return state.merge({ threadSent: true });
+}
+
+export const send_message =(state, {thread_id, data})  =>{
+  
+  return state;
+}
+export const send_message_success =(state)  =>{
+  notification['success']({
+    message: 'Success',
+    description:
+      'Message sent with success.',
+  });
+  return state;
 }
 
 
@@ -125,6 +148,8 @@ export const reducer = createReducer(INITIAL_STATE, {
   [Types.LOAD_THREAD]: load_thread,
   [Types.SEND_THREAD]: send_thread,
   [Types.SEND_THREAD_SUCCESS]: send_thread_success,
+  [Types.SEND_MESSAGE]: send_message,
+  [Types.SEND_MESSAGE_SUCCESS]: send_message_success,
  
 
 });

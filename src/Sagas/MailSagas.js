@@ -26,10 +26,8 @@ export function* send_thread(api, {thread}){
   yield put(MailActions.sendThreadSuccess());
 }
 
-export function* send_message(api, {thread_id, message}){
-  const res = yield call(api.send_message, thread_id, message)
-  // console.log("wwwwwwwww",res.data)
-  //TODO:
-  // yield put(MailActions.sendThreadSuccess());
+export function* send_message(api, {thread_id, data}){
+  const res = yield call(api.send_message, thread_id, data)
+  yield put(MailActions.sendMessageSuccess());
 }
 

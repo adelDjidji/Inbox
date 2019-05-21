@@ -52,19 +52,24 @@ class ThreadDetail extends Component {
         });
     };
 onSubmit=()=>{
-alert('submiit'+this.state.value)
-var item = {}
-            item.author = "Admin"
-            item.content = this.state.value
-            item.avatar = 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
-            item.datetime = 
-                <span>
-                    {moment()}
-                </span>
+// alert('submiit'+this.state.value)
+this.props.sendReply(this.id, {
+    "message": this.state.value,
+    "creator": "admin@dzconseil.com" //for testiing now
+})
+this.setState({value:""})
+// var item = {}
+//             item.author = "Admin"
+//             item.content = this.state.value
+//             item.avatar = 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
+//             item.datetime = 
+//                 <span>
+//                     {moment()}
+//                 </span>
             
-            this.data.push(item)
-            console.log("DATA submit ",this.data)
-            this.setState({ messages: this.data })
+//             this.data.push(item)
+//             console.log("DATA submit ",this.data)
+//             this.setState({ messages: this.data })
 };
 
     render() {
@@ -129,6 +134,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         loadThread: (id) => dispatch(MailActions.RequestMessages(id)),
+        sendReply:(thread_id, data) => dispatch(MailActions.sendMessage(thread_id,data)),
     };
 };
 

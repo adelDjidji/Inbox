@@ -75,6 +75,11 @@ class Compose extends Component {
             },
           };
         return (
+            <div>
+            <h1 style={{padding:22}}>
+            <Icon type="form" />
+              Write a message
+            </h1>
             <Form {...formItemLayout} onSubmit={this.handleSubmit}>
         <Form.Item label="Subject">
           {getFieldDecorator('subject', {
@@ -120,6 +125,7 @@ class Compose extends Component {
           </Button>
         </Form.Item>
       </Form>
+      </div>
         );
     }
 }
