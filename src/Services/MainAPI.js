@@ -13,11 +13,15 @@ const create = (baseURL = API_URL) => {
 
   const request_threads= ()=> api.get('threads') //link to load threads, get json result
   const request_messages= (thread)=> api.get('threads/'+thread) //link to load threads, get json result
+  const send_thread= (thread)=> api.post('threads/', thread) //link to send thread
+  const send_message= (thread, body)=> api.post('threads/'+thread, body) //link to send thread
   
   return {
     api,
     request_threads,
     request_messages,
+    send_thread,
+    send_message
   }
 }
 

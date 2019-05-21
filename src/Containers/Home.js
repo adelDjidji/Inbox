@@ -2,12 +2,9 @@ import React, { Component } from 'react'
 import { Layout, Menu, Icon, Badge} from 'antd';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Threads from './ListThreads'
-
+import Compose from "./Compose"
 const { Header, Sider, Content } = Layout;
 
-const Compose = () => {
-    return (<div>Compose</div>)
-}
 class Home extends Component {
     state = {
         collapsed: false,

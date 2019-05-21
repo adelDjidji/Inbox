@@ -10,7 +10,7 @@ import { MailTypes } from '../Redux/MailRedux'
 
 /* ------------- Sagas functions ------------- */
 
-import { load_threads, load_messages } from './MailSagas'
+import { load_threads, load_messages, send_thread } from './MailSagas'
 
 
 /* ------------- API ------------- */
@@ -23,6 +23,7 @@ export default function* root() {
 
     takeLatest(MailTypes.REQUEST_THREADS, load_threads, mainAPI),
     takeLatest(MailTypes.REQUEST_MESSAGES, load_messages, mainAPI),
+    takeLatest(MailTypes.SEND_THREAD, send_thread, mainAPI),
    
   ])
 }

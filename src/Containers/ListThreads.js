@@ -34,11 +34,11 @@ class Threads extends Component {
     render() {
         //if (this.props.fetching) return <Skeleton loading={true} active avatar paragraph={{ rows: 2 }} /> //<Spin size="large" />
         var da=null
-        console.log("selected ==",this.state.selectedThread)
+        // console.log("selected ==",this.state.selectedThread)
                     if(this.state.selectedThread==0){
                         da=  <div></div>
                     }else{
-                        da=  <Sider style={{background:'transparent'}}><ThreadDetails /></Sider>
+                        da=  <Sider width={600} style={{background:'transparent',     minWidth: '50%!important', width:600}}><ThreadDetails data={this.state.selectedThread} /></Sider>
                     }
                     
         return (
@@ -87,7 +87,7 @@ class Threads extends Component {
 const mapStateToProps = state => {
 
     state = state.mail
-    console.log("STATE =", state)
+    // console.log("STATE list =", state)
 
     return {
         fetching: state.fetching,

@@ -9,36 +9,27 @@ export function* load_threads(api){
   if(!res.data) res.data=[]
   yield put(MailActions.loadThreads(res.data));
 }
+
 export function* load_messages(api, {thread}){
   const res = yield call(api.request_messages, thread)
-  if(!res.data) res.data=[]
-  yield put(MailActions.loadMessages(res.data));
-}
-// export function* login(api, { email, password }) {
+  // if(!res.data) res.data=[]
+  console.log("wwwwwwwww",res.data)
   
-//   const body = {
-//     username: email,
-//     password: password,
-//     client_id: "1",
-//     grant_type: "password"
-//   };
+  yield put(MailActions.loadThread(res.data));
+}
 
-//   console.log("LOGIN saga 2",api)
-//   const response = yield call(api.login, body);
 
-//   if (response.data) {
-//     console.log("SAGA:loginsuccess")
-//             sessionStorage.setItem("sessionID", 200);
-//             sessionStorage.setItem("sessionAccess", response.data.type);
-//             sessionStorage.setItem("sessionCurrent", JSON.stringify(response.data));
-//     yield put(UsersActions.authSuccess());
-//   } else {
-//     console.log("SAGA:loginFail")
+export function* send_thread(api, {thread}){
+  const res = yield call(api.send_thread, thread)
+  // console.log("wwwwwwwww",res.data)
+  
+  yield put(MailActions.sendThreadSuccess());
+}
 
-//     yield put(UsersActions.authFailure("Email ou mot de passe incorrect!"));
-//   }
-// }
-// export function* logout(api) {
-//   yield call(api.removeAuthToken);
-//   yield put(UsersActions.logoutSuccess());
-// }
+export function* send_message(api, {thread_id, message}){
+  const res = yield call(api.send_message, thread_id, message)
+  // console.log("wwwwwwwww",res.data)
+  //TODO:
+  // yield put(MailActions.sendThreadSuccess());
+}
+
