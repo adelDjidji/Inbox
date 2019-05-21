@@ -30,6 +30,7 @@ class ThreadDetail extends Component {
     };
     componentWillReceiveProps(nextProps) {
 
+        //after getting data from redux as props, we save it on current state
         nextProps.threadOBJ.messages.map(msg => {
             var item = {}
             item.author = msg.creator.username

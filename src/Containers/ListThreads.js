@@ -6,7 +6,6 @@ import moment from 'moment'
 import { Layout, Menu, Icon, Spin, List, Avatar, Skeleton } from 'antd';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-// import ThreadItem from '../Components/ThreadItem'
 import ThreadDetails from './ThreadDetail'
 const { Header, Sider, Content, Footer } = Layout;
 
@@ -28,13 +27,12 @@ class Threads extends Component {
 
     selectThread= (val)=>{
         console.log("valeur =",val)
+        //save the ID of curent thread
         this.setState({selectedThread:val})
     }
 
     render() {
-        //if (this.props.fetching) return <Skeleton loading={true} active avatar paragraph={{ rows: 2 }} /> //<Spin size="large" />
         var da=null
-        // console.log("selected ==",this.state.selectedThread)
                     if(this.state.selectedThread==0){
                         da=  <div></div>
                     }else{
@@ -59,11 +57,7 @@ class Threads extends Component {
                         var random = Math.round(Math.random() * (+max - +min) + +min);
                         var backs=['#87d068', '#673AB7', '#26C6DA','#FF9800', 'crimson', '#e8d52e', 'aquamarine', 'black', '#00BCD4' , 'chartreuse' ]
                         var myBack = backs[random]
-                        // return (<ThreadItem
-                        //     fetching={this.props.fetching}
-                        //     item={item}
-                        //     onClick={this.selectThread.bind(this, item.id)}
-                        //     />)
+                        
                         return (
                             <Skeleton loading={this.props.fetching} active avatar paragraph={{ rows: 2 }} >
                             <List.Item>
@@ -91,7 +85,6 @@ class Threads extends Component {
 const mapStateToProps = state => {
 
     state = state.mail
-    // console.log("STATE list =", state)
 
     return {
         fetching: state.fetching,
