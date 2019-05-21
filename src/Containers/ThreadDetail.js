@@ -63,6 +63,7 @@ var item = {}
                 </span>
             
             this.data.push(item)
+            console.log("DATA submit ",this.data)
             this.setState({ messages: this.data })
 };
 

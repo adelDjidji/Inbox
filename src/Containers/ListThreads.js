@@ -6,7 +6,7 @@ import moment from 'moment'
 import { Layout, Menu, Icon, Spin, List, Avatar, Skeleton } from 'antd';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-
+// import ThreadItem from '../Components/ThreadItem'
 import ThreadDetails from './ThreadDetail'
 const { Header, Sider, Content, Footer } = Layout;
 
@@ -60,14 +60,19 @@ class Threads extends Component {
                         var random = Math.round(Math.random() * (+max - +min) + +min);
                         var backs=['#87d068', '#673AB7', '#26C6DA','#FF9800', 'crimson', '#e8d52e', 'aquamarine', 'black', '#00BCD4' , 'chartreuse' ]
                         var myBack = backs[random]
+                        // return (<ThreadItem
+                        //     fetching={this.props.fetching}
+                        //     item={item}
+                        //     onClick={this.selectThread.bind(this, item.id)}
+                        //     />)
                         return (
                             <Skeleton loading={this.props.fetching} active avatar paragraph={{ rows: 2 }} >
                             <List.Item>
                            
                                 <List.Item.Meta
                                     avatar={<Avatar size="large" style={{ backgroundColor: myBack }}>{userLetter}</Avatar>}
+                                    
                                     onClick={this.selectThread.bind(this, item.id)}
-                    
                                     title={<a href="https://ant.design">{item.subject}</a>}
                                     description={<span><span style={{fontWeight: 'bold'}}>{user}</span><span style={{fontSize: '8pt', float: 'right'}}>{dateMoment}</span></span>}
                                 />

@@ -1,0 +1,55 @@
+import React, { Component } from 'react'
+import { connect } from "react-redux";
+
+import MailActions from '../Redux/MailRedux'
+import moment from 'moment'
+import {
+    Skeleton,List,Avatar,
+  } from 'antd';
+ 
+
+
+class ThreadItem extends Component {
+    constructor(props) {
+        super(props)
+    }
+    state = {
+       
+    };
+    handleClick = () => {
+        
+      };
+
+      
+    componentDidMount() {
+    }
+
+  
+    render() {
+        let user = this.props.item.messages[0].creator.username
+        let userLetter = this.props.item.messages[0].creator.username[0].toUpperCase()
+        let date = this.props.item.messages[0].time
+        var m ="2019-05-19T15:49:04-07:00"
+        let dateMoment = moment(m).calendar();
+        var min = 0;
+        var max = 9;
+        var random = Math.round(Math.random() * (+max - +min) + +min);
+        var backs=['#87d068', '#673AB7', '#26C6DA','#FF9800', 'crimson', '#e8d52e', 'aquamarine', 'black', '#00BCD4' , 'chartreuse' ]
+        var myBack = backs[random]
+        return (
+            <Skeleton loading={this.props.fetching} active avatar paragraph={{ rows: 2 }} >
+                            <List.Item>
+                           
+                                <List.Item.Meta
+                                    avatar={<Avatar size="large" style={{ backgroundColor: myBack }}>{userLetter}</Avatar>}                    
+                                    title={<a >{this.props.item.subject}</a>}
+                                    description={<span><span style={{fontWeight: 'bold'}}>{user}</span><span style={{fontSize: '8pt', float: 'right'}}>{dateMoment}</span></span>}
+                                />
+                            </List.Item>
+                            </Skeleton>
+        )
+    }
+}
+
+
+export default ThreadItem
