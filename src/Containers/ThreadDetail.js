@@ -51,8 +51,10 @@ class ThreadDetail extends Component {
             value: e.target.value,
         });
     };
+    handledelete=()=>{
+        alert('you are going to delete ?')
+    }
 onSubmit=()=>{
-// alert('submiit'+this.state.value)
 this.props.sendReply(this.id, {
     "message": this.state.value,
     "creator": "admin@dzconseil.com" //for testiing now
@@ -101,7 +103,7 @@ this.setState({value:""})
             return (
                 <Collapse defaultActiveKey={['1']} >
 
-                    <Panel header={obj.subject} key="1">
+                    <Panel header={<span>{obj.subject}<Icon onClick={this.handledelete} style={{    float: 'right',color: '#E91E63'}} type="delete" /></span>} key="1">
                         <p>{list}</p>
                         <Form.Item>
                             <TextArea rows={4} onChange={this.handleChange} value={this.state.value} />

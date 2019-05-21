@@ -110,7 +110,7 @@ export const load_thread =(state, {thread})  =>{ //thread infos ready !
 }
 
 
-
+//send thread data
 export const send_thread =(state, {thread})  =>{
   console.log("-----redux thread to send = ", thread)
   return state.merge({ threadSent: false });
@@ -121,14 +121,13 @@ export const send_thread_success =(state)  =>{
     description:
       'Thread sent with success.',
   })
-  setInterval(function(){ document.location.href='/' }, 1000);
-  
+  setInterval(function(){ document.location.href='/' }, 1000); // redirect after insertion success
   return state.merge({ threadSent: true });
 }
 
+
 export const send_message =(state, {thread_id, data})  =>{
-  
-  return state;
+  return state; //do nithing here on redux, the work is on saga
 }
 export const send_message_success =(state)  =>{
   notification['success']({
@@ -136,7 +135,7 @@ export const send_message_success =(state)  =>{
     description:
       'Message sent with success.',
   });
-  return state;
+  return state; // just show notification do nothing else
 }
 
 

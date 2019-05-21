@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Mail Box React
 
-## Available Scripts
+Inbox SPA applicaion with ReactJS using:
 
-In the project directory, you can run:
+  - Redux
+  - Redux-saga
+  - moment JS
+  - Ant Design Components 
+  - ..
 
-### `npm start`
+# Features!
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  - Show list of threads (inbox)
+  - Show list of messages for each thread
+  - Send a reply message on a thread
+  - Send a new thread
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+Virtual server used for API:
+  - GET https://virtserver.swaggerhub.com/dzconseil/challenge/1.0.0/threads/ : list of threads
+  - POST https://virtserver.swaggerhub.com/dzconseil/challenge/1.0.0/threads/ : send a thread
+  - GET https://virtserver.swaggerhub.com/dzconseil/challenge/1.0.0/threads/{uuid} : get details of one thread
+  - POST https://virtserver.swaggerhub.com/dzconseil/challenge/1.0.0/threads/{uuid} send a message on a thread
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Dillinger requires [Node.js](https://nodejs.org/) v4+ to run.
+Clone the git repository : 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+$ git clone https://github.com/adelDjidji/Inbox.git
+$ cd Inbox
+```
 
-### `npm run eject`
+Install the dependencies and devDependencies and start the server.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+$ npm install
+$ npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+or
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+$ yarn
+$ yarn start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+###  
+if it doesn't open on your navigator
+navigate to :
 
-## Learn More
+https://localhost:3000/
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Happy coding !
