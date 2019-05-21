@@ -48,7 +48,7 @@ class Compose extends Component {
         const formItemLayout = {
             labelCol: {
                 xs: { span: 24 },
-                sm: { span: 8 },
+                sm: { span: 4 },
             },
             wrapperCol: {
                 xs: { span: 24 },
@@ -113,8 +113,9 @@ class Compose extends Component {
 
 
                     <Form.Item {...tailFormItemLayout}>
-                        <Button type="primary" htmlType="submit">
+                        <Button style={{fontSize:16,width:120}} type="primary" htmlType="submit">
                             Send
+                            <Icon type="play-circle" />
           </Button>
                     </Form.Item>
                 </Form>

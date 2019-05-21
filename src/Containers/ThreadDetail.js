@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import MailActions from '../Redux/MailRedux'
 import moment from 'moment'
-import { Layout, Menu, Icon, Spin, List, Collapse, Comment, Tooltip, Form, Input, Button } from 'antd';
+import { Layout, Menu, Icon, Spin, List, Collapse, Comment, Tooltip, Form, Input, Button, Skeleton } from 'antd';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const Panel = Collapse.Panel;
@@ -76,7 +76,7 @@ this.setState({value:""})
 
     render() {
         var obj = this.props.threadOBJ //
-        if (this.props.fetching2) return <Spin size="large" />
+        if (this.props.fetching2) return <Skeleton avatar paragraph={{ rows: 4 }} />// <Spin size="large" />
 
         else {
             var list = obj.messages.map(msg => {

@@ -57,28 +57,28 @@ class Home extends Component {
                                 <Link to="/">
                                 <Icon type="mail" />
                                     <span>Inbox</span>
-                                    <Badge style={{ backgroundColor: '#fff', color: '#999', boxShadow: '0 0 0 1px #d9d9d9 inset', right: '-54pt' }} count={25} />
+                                    <Badge style={{ backgroundColor: '#fff', color: '#999', boxShadow: '0 0 0 1px #d9d9d9 inset', right: '-54pt' }} count={1} />
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="3">
                                 <Link to="/">
                                 <Icon type="form" />
                                     <span>Drafts</span>
-                                    <Badge style={{ backgroundColor: '#fff', color: '#999', boxShadow: '0 0 0 1px #d9d9d9 inset', right: '-54pt' }} count={25} />
+                                    <Badge style={{ backgroundColor: '#fff', color: '#999', boxShadow: '0 0 0 1px #d9d9d9 inset', right: '-54pt' }} count={1} />
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="4">
                                 <Link to="/">
                                 <Icon type="safety" />
                                     <span>Sent</span>
-                                    <Badge style={{ backgroundColor: '#fff', color: '#999', boxShadow: '0 0 0 1px #d9d9d9 inset', right: '-54pt' }} count={25} />
+                                    <Badge style={{ backgroundColor: '#fff', color: '#999', boxShadow: '0 0 0 1px #d9d9d9 inset', right: '-54pt' }} count={1} />
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="5">
                                 <Link to="/">
                                 <Icon type="rest" />
                                     <span>Trash</span>
-                                    <Badge style={{ backgroundColor: '#fff', color: '#999', boxShadow: '0 0 0 1px #d9d9d9 inset', right: '-54pt' }} count={25} />
+                                    <Badge style={{ backgroundColor: '#fff', color: '#999', boxShadow: '0 0 0 1px #d9d9d9 inset', right: '-54pt' }} count={1} />
                                 </Link>
                             </Menu.Item>
                         </Menu>

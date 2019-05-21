@@ -43,7 +43,7 @@ class Threads extends Component {
                     
         return (
             <div>
-            <Layout>
+            <Layout style={{ background: '#fff' }}>
             <Content>
                 <List
                     itemLayout="horizontal"
@@ -53,8 +53,7 @@ class Threads extends Component {
                         let user = item.messages[0].creator.username
                         let userLetter = item.messages[0].creator.username[0].toUpperCase()
                         let date = item.messages[0].time
-                        var m ="2019-05-19T15:49:04-07:00"
-                        let dateMoment = moment(m).calendar();
+                        let dateMoment = moment(date).calendar();
                         var min = 0;
                         var max = 9;
                         var random = Math.round(Math.random() * (+max - +min) + +min);
